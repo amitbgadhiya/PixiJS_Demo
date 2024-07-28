@@ -45,7 +45,7 @@ async function loadAllTextures() {
         BTN_SPIN: "images/spin_button.png"
     });
     return await PIXI.Assets.loadBundle('textures', (progress) => {
-        basicText.text = `Loading assets ...${progress * 100}%`;
+        basicText.text = `Loading assets ...${(progress * 100).toFixed(2)}%`;
         if (progress * 100 >= 100) {
             console.log("Loading Done...");
             basicText.destroy({ children: true });
